@@ -21,4 +21,5 @@ $(ODIR)/%.o: %.cpp $(IDIR)/%.h | $(ODIR)
 
 clean:
 	rm -rf $(ODIR)
+	rm sort
 
