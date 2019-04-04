@@ -1,4 +1,4 @@
-#include "../include/tester.h"
+#include "tester.h"
 
 Sort* Tester::getSort (Algorithm sort, void *array, size_t size) {
   switch (sort) {
@@ -32,8 +32,10 @@ void Tester::integerSorts (int *array, size_t size, void (*compare)(void*, int, 
     sort = getSort(algorithm[i], temp, size);
     sort -> execute(compare);
     if (not is_sorted(temp, temp + size)) {
-      std::cerr << "The " + sort -> name() + " is not ordering all the elements\n";
+      std::cerr << "Fail. " + sort -> name() << endl;
       std::terminate();
+    } else {
+      std::cout << "OK. " << sort -> name() << endl;
     }
   }
 }

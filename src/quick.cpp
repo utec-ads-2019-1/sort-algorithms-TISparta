@@ -1,4 +1,4 @@
-#include "../include/quick.h"
+#include "quick.h"
 
 void QuickSort::execute (void (*compare)(void*, int, int)) {
 

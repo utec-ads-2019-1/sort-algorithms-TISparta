@@ -1,4 +1,4 @@
-#include "../include/mocker.h"
+#include "mocker.h"
 
 int Mocker::generateRandomInt () {
   uniform_int_distribution<mt19937::result_type> distribution(MIN, MAX);
