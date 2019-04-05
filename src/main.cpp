@@ -21,19 +21,17 @@ int main (int argc, char* argv[]) {
   return EXIT_SUCCESS;
 }
 
-void compareIntegers (void *elements, int first, int second) {
+bool lessThan (void *elements, int i, int j) {
   int* array = (int*) elements;
-  if (array[first] > array[second]) {
-    swap(array[first], array[second]);
-  }
+  return array[i] < array[j];
 }
 
 void executeTests () {
   for (int i = 0; i < NUMBER_OF_TESTS; i++) {
     size_t size = mocker.generateRandomInt();
     int* array = mocker.generateRandomIntArray(size);
-    cout << "Iteration " << i + 1 << endl;
-    Tester::integerSorts(array, size, compareIntegers);
+    cout << "ITERATION " << i + 1 << endl;
+    Tester::integerSorts(array, size, lessThan);
   }
 }
 

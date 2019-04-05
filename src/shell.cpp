@@ -1,5 +1,5 @@
 #include "shell.h"
 
-void ShellSort::execute (void (*compare)(void*, int, int)) {
+void ShellSort::execute (bool (*compare)(void*, int, int)) {
 
 }

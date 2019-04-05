@@ -27,7 +27,7 @@ class Tester {
 private:
   static Sort* getSort(Algorithm, void*, size_t);
 public:
-  static void integerSorts(int*, size_t, void (*)(void*, int, int));
+  static void integerSorts(int*, size_t, bool (*)(void*, int, int));
 };
 
 #endif

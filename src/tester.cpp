@@ -12,7 +12,7 @@ Sort* Tester::getSort (Algorithm sort, void *array, size_t size) {
   }
 }
 
-void Tester::integerSorts (int *array, size_t size, void (*compare)(void*, int, int)) {
+void Tester::integerSorts (int *array, size_t size, bool (*lessThan)(void*, int, int)) {
   Sort* sort;
   int temp[size];
 
@@ -30,10 +30,10 @@ void Tester::integerSorts (int *array, size_t size, void (*compare)(void*, int, 
   for (int i = 0; i < int(numberOfAlgorithms); i++) {
     copy(array, array + size, temp);
     sort = getSort(algorithm[i], temp, size);
-    sort -> execute(compare);
+    sort -> execute(lessThan);
     if (not is_sorted(temp, temp + size)) {
       std::cerr << "Fail. " + sort -> name() << endl;
-      std::terminate();
+      //std::terminate();
     } else {
       std::cout << "OK. " << sort -> name() << endl;
     }

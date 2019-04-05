@@ -1,5 +1,5 @@
 #include "quick.h"
 
-void QuickSort::execute (void (*compare)(void*, int, int)) {
+void QuickSort::execute (bool (*compare)(void*, int, int)) {
 
 }
