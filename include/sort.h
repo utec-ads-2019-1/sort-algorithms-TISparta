@@ -16,7 +16,7 @@ public:
   virtual void execute (bool (*lessThan)(void*, int, int)) = 0;
   virtual string name() = 0;
   void swap (int i, int j) {
-    int* array = (int*) elements;
+    int* array = (int*)elements;
     std::swap(array[i], array[j]);
   }
 };

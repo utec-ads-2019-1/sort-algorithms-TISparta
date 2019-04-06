@@ -1,4 +1,5 @@
 #include "tester.h"
+#include "color.h"
 
 Sort* Tester::getSort (Algorithm sort, void *array, size_t size) {
   switch (sort) {
@@ -32,10 +33,9 @@ void Tester::integerSorts (int *array, size_t size, bool (*lessThan)(void*, int,
     sort = getSort(algorithm[i], temp, size);
     sort -> execute(lessThan);
     if (not is_sorted(temp, temp + size)) {
-      std::cerr << "Fail. " + sort -> name() << endl;
-      //std::terminate();
+      std::cerr << Color::red << "Fail. " + sort -> name() << endl << Color::normal;
     } else {
-      std::cout << "OK. " << sort -> name() << endl;
+      std::cout << Color::green << "OK. " << sort -> name() << endl << Color::normal;
     }
   }
 }
